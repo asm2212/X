@@ -1,7 +1,9 @@
-import { signIn, getProviders } from 'next-auth/react';
+import { signIn, getProviders, useSession } from 'next-auth/react';
 import "../public/google.png"
 
 export default function LoginPage({ providers }) {
+    const {data,status} = useSession();
+    console.log(data,status);  
     return (
         <div className="flex items-center justify-center h-screen">
             {providers && Object.values(providers).map(provider => (
