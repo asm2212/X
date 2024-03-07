@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-file-drop": "^3.1.6",
+    "react-flip-numbers": "^3.0.8",
     "react-spinners": "^0.13.8"
   },
   "devDependencies": {
