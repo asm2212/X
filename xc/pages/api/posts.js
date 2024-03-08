@@ -9,6 +9,10 @@ export default async function handler(req, res) {
     await initMongoose();
     const session = await getSession({ req });
 
+        if (!session) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+
     if (req.method === 'GET') {
       const { id } = req.query;
       if (id) {
@@ -81,3 +85,38 @@ export default async function handler(req, res) {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 }
+
+
+
+
+// export default async function handler(req, res) {
+//   try {
+//     await initMongoose();
+//     const session = await getSession({ req });
+ 
+
+
+
+//     if (req.method === 'GET') {
+//     } else if (req.method === 'POST') {
+//       const { text, parent, images } = req.body;
+//       const post = await Post.create({
+//         author: session.user.id,
+//         text,
+//         parent,
+//         images,
+//       });
+
+//       if (parent) {
+//         const parentPost = await Post.findById(parent);
+//         parentPost.commentsCount = await Post.countDocuments({ parent });
+//         await parentPost.save();
+//       }
+
+//       res.json(post);
+//     }
+//   } catch (error) {
+//     console.error('Error:', error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// }
