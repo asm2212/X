@@ -1,4 +1,4 @@
-import {model, models, Schema} from "mongoose";
+import { model, modelNames, Schema } from 'mongoose';
 
 const UserSchema = new Schema({
   name: String,
@@ -9,6 +9,7 @@ const UserSchema = new Schema({
   username: String,
 });
 
-const User = models?.User || model('User', UserSchema);
+const modelName = 'User';
+const User = modelNames().includes(modelName) ? model(modelName) : model(modelName, UserSchema);
 
 export default User;
