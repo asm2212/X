@@ -15,7 +15,7 @@ export default function Home() {
   const [posts,setPosts] = useState([]);
   const [idsLikedByMe,setIdsLikedByMe] = useState([]);
   const router = useRouter();
-
+  
   function fetchHomePosts() {
     axios.get('/api/posts').then(response => {
       setPosts(response.data.posts);
@@ -39,7 +39,7 @@ export default function Home() {
   if (userInfo && !userInfo?.username) {
     return <UsernameForm />;
   }
-
+ 
   if (!userInfo) {
     console.log({session});
     router.push('/login');
