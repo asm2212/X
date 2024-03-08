@@ -73,7 +73,7 @@ export default function Upload({ children, onUploadFinish }) {
     >
       <div className="relative">
         {(isFileNearby || isFileOver) && (
-          <div className="bg-twitterBlue absolute inset-0 flex items-center justify-center">
+          <div className="bg-xblue absolute inset-0 flex items-center justify-center">
             drop your images here
           </div>
         )}

@@ -91,7 +91,7 @@ export default function UserPage() {
             <div className="p-2">
               {!isMyProfile && (
                 <button onClick={toggleFollow}
-                        className={(isFollowing ? 'bg-twitterWhite text-black' : 'bg-twitterBlue text-white')+" py-2 px-5 rounded-full"}>
+                        className={(isFollowing ? 'bg-xwhite text-black' : 'bg-xblue text-white')+" py-2 px-5 rounded-full"}>
                   {isFollowing ? 'Following' : 'Follow'}
                 </button>
               )}
@@ -100,16 +100,16 @@ export default function UserPage() {
                   {!editMode && (
                     <button
                       onClick={() => setEditMode(true)}
-                      className="bg-twitterBlue text-white py-2 px-5 rounded-full">Edit profile</button>
+                      className="bg-xblue text-white py-2 px-5 rounded-full">Edit profile</button>
                   )}
                   {editMode && (
                     <div>
                       <button
                         onClick={() => cancel()}
-                        className="bg-twitterWhite text-black py-2 px-5 rounded-full mr-2">Cancel</button>
+                        className="bg-xwhite text-black py-2 px-5 rounded-full mr-2">Cancel</button>
                       <button
                         onClick={() => updateProfile()}
-                        className="bg-twitterBlue text-white py-2 px-5 rounded-full">Save profile</button>
+                        className="bg-xblue text-white py-2 px-5 rounded-full">Save profile</button>
                     </div>
                   )}
                 </div>
@@ -124,17 +124,17 @@ export default function UserPage() {
               <div>
                 <input type="text" value={profileInfo.name}
                        onChange={ev => setProfileInfo(prev => ({...prev,name:ev.target.value}))}
-                       className="bg-twitterBorder p-2 mb-2 rounded-full"/>
+                       className="bg-xborder p-2 mb-2 rounded-full"/>
               </div>
             )}
             {!editMode && (
-              <h2 className="text-twitterLightGray text-sm">@{profileInfo.username}</h2>
+              <h2 className="text-xlightgray text-sm">@{profileInfo.username}</h2>
             )}
             {editMode && (
               <div>
                 <input type="text" value={profileInfo.username}
                        onChange={ev => setProfileInfo(prev => ({...prev,username:ev.target.value}))}
-                       className="bg-twitterBorder p-2 mb-2 rounded-full"/>
+                       className="bg-xborder p-2 mb-2 rounded-full"/>
               </div>
             )}
             {!editMode && (
@@ -144,14 +144,14 @@ export default function UserPage() {
               <div>
                 <textarea value={profileInfo.bio}
                           onChange={ev => setProfileInfo(prev => ({...prev,bio:ev.target.value}))}
-                          className="bg-twitterBorder p-2 mb-2 rounded-2xl w-full block"  />
+                          className="bg-xborder p-2 mb-2 rounded-2xl w-full block"  />
               </div>
             )}
           </div>
         </div>
       )}
       {posts?.length > 0 && posts.map(post => (
-        <div className="p-5 border-t border-twitterBorder" key={post._id}>
+        <div className="p-5 border-t border-xborder" key={post._id}>
           <PostContent {...post} likedByMe={postsLikedByMe.includes(post._id)} />
         </div>
       ))}

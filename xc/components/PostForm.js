@@ -34,7 +34,7 @@ export default function PostForm({onPost,compact,parent,placeholder='What\'s hap
             onUploadFinish={src => setImages(prev => [...prev,src])}
           >{({isUploading}) => (
             <div>
-              <textarea className={(compact ? 'h-10 mt-1' : 'h-24')+" w-full p-2 bg-transparent text-twitterWhite"}
+              <textarea className={(compact ? 'h-10 mt-1' : 'h-24')+" w-full p-2 bg-transparent text-xwhite"}
                         value={text}
                         onChange={e => setText(e.target.value)}
                         placeholder={placeholder} />
@@ -45,7 +45,7 @@ export default function PostForm({onPost,compact,parent,placeholder='What\'s hap
                   </div>
                 ))}
                 {isUploading && (
-                  <div className="h-24 w-24 m-2 bg-twitterBorder flex items-center justify-center">
+                  <div className="h-24 w-24 m-2 bg-xborder flex items-center justify-center">
                     <PulseLoader size={14} color={'#fff'} />
                   </div>
                 )}
@@ -53,14 +53,14 @@ export default function PostForm({onPost,compact,parent,placeholder='What\'s hap
             </div>
           )}</Upload>
           {!compact && (
-            <div className="text-right border-t border-twitterBorder pt-2 pb-2">
-              <button className="bg-twitterBlue text-white px-5 py-1 rounded-full">Tweet</button>
+            <div className="text-right border-t border-xborder pt-2 pb-2">
+              <button className="bg-xblue text-white px-5 py-1 rounded-full">Tweet</button>
             </div>
           )}
         </div>
         {compact && (
           <div className="pl-2">
-            <button className="bg-twitterBlue text-white px-5 py-1 rounded-full">Tweet</button>
+            <button className="bg-xblue text-white px-5 py-1 rounded-full">Tweet</button>
           </div>
         )}
       </div>
