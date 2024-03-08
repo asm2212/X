@@ -3,6 +3,10 @@ import GoogleProvider from 'next-auth/providers/google';
 import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
 import clientPromise from '../../../lib/mongodb';
 
+const client = await clientPromise;
+const adapter = new MongoDBAdapter({
+    db: db.client("xc"),
+})
 const authOptions = {
   adapter: MongoDBAdapter(await clientPromise),
   providers: [
