@@ -44,7 +44,7 @@ export default function EditableImage({type,src,onChange,className,editable=fals
         setIsFileOver(false);
       }}
     >
-      <div className={"bg-twitterBorder text-white relative"}>
+      <div className={"bg-xborder text-white relative"}>
         <div className={'absolute inset-0 '+extraClasses}></div>
         {isUploading && (
           <div className="absolute inset-0 flex items-center justify-center"

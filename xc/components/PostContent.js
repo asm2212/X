@@ -43,11 +43,11 @@ export default function PostContent({
             </Link>
             {big && (<br />)}
             <Link href={'/'+author?.username}>
-              <span className="text-twitterLightGray cursor-pointer">@{author?.username}</span>
+              <span className="text-xlightgray cursor-pointer">@{author?.username}</span>
             </Link>
             {createdAt && !big && (
-              <span className="pl-1 text-twitterLightGray">
-              <ReactTimeAgo date={createdAt} timeStyle={'twitter'} />
+              <span className="pl-1 text-xlightgray">
+              <ReactTimeAgo date={createdAt} timeStyle={'x'} />
             </span>
             )}
           </div>
@@ -73,7 +73,7 @@ export default function PostContent({
             </div>
           </Link>
           {createdAt && (
-            <div className="text-twitterLightGray text-sm">
+            <div className="text-xlightgray text-sm">
               {(new Date(createdAt))
                 .toISOString()
                 .replace('T', ' ')
