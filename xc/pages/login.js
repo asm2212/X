@@ -36,13 +36,16 @@ export default function LoginPage({ providers }) {
 export async function getServerSideProps() {
   try {
     const providers = await getProviders();
+    if (!providers) {
+      throw new Error("Providers not found");
+    }
     return {
       props: { providers },
     };
   } catch (error) {
     console.error("Error fetching providers:", error);
     return {
-      props: { providers: {} }, 
+      props: { providers: {} },
     };
   }
 }
