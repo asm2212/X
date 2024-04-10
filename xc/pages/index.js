@@ -46,6 +46,11 @@ export default function Home() {
     return 'no user info';
   }
 
+  // async function connectToDB(){
+  //   console.log("Connecting to server");
+  //   await mongoose
+  // }
+
   return (
     <Layout>
       <h1 className="text-lg font-bold p-4">Home</h1>

@@ -7,6 +7,7 @@ import Cover from "../components/Cover";
 import Avatar from "../components/Avatar";
 import PostContent from "../components/PostContent";
 import useUserInfo from "../hooks/useUserInfo";
+import { setDriver } from "mongoose";
 
 export default function UserPage() {
   const router = useRouter();
@@ -35,6 +36,13 @@ export default function UserPage() {
     if (!profileInfo?._id) {
       return;
     }
+    // axios.get("api/users?username="+username)
+    // .then(response) => {
+    //   setEditMode(response.data.user);
+    //   setDriver(response.data.user);
+    //   setPosts(response.data.post);
+    //   setPostsLikedByMe(response.data.userInfo);
+    // }
     axios.get('/api/posts?author='+profileInfo._id)
       .then(response => {
         setPosts(response.data.posts);

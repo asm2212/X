@@ -5,7 +5,7 @@ import clientPromise from '../../../lib/mongodb';
 
 async function configureAuth() {
   try {
-    const client = await clientPromise;
+    const client = await clientPromise();
     const db = client.db(); // Get the database instance
 
     const adapter = new MongoDBAdapter({
@@ -42,6 +42,7 @@ async function configureAuth() {
     console.error('Error:', error);
     throw error;
   }
+  
 }
 
 export default configureAuth;
